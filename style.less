@@ -3,7 +3,42 @@
 @import "/less/variables.less";
 @import "/less/flatly.less";
 
+@fa-font-path: "/less/font-awesome/fonts";
+
 body { padding-top: 70px; }
 
-@fa-font-path: "/less/font-awesome/fonts";
+/* Edit button */
+.post-edit-link {
+  font-size: 12px;
+  color: #999;
+  opacity: 0;
+}
+.post:hover .post-edit-link,
+.page:hover .post-edit-link {
+  opacity: 1;
+}
+
+.post .entry-meta,
+article.attachment .entry-meta {
+  margin-bottom: 20px;
+}
+.post .entry-meta ul,
+article.attachment .entry-meta ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post .entry-meta ul li,
+article.attachment .entry-meta ul li {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 12px;
+  color: #999;
+}
+.post .entry-meta ul li a,
+article.attachment .entry-meta ul li a {
+  color: #999;
+}
+
+
 
