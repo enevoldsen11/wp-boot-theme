@@ -1,16 +1,68 @@
 @import "/less/bootstrap/less/bootstrap.less";
 @import "/less/font-awesome/less/font-awesome.less";
-@import "/less/variables.less";
-@import "/less/flatly.less";
 
 @fa-font-path: "/less/font-awesome/fonts";
 
-body { padding-top: 70px; }
+/*
+Basic variables
+*/
+
+@header-color: #222222;
+@header-text-color: #ffffff; 
+
+@bottom-color: lighten(@header-color, 5%); 
+@bottom-text-color: @header-text-color;
+
+@footer-color: darken(@header-color, 5%);
+@footer-text-color: @header-text-color;
+
+//** Global textual link color.
+@link-color: #d8283d;
+//** Link hover color set via `darken()` function.
+@link-hover-color:  darken(@link-color, 5%);
+
+//** Background color for `<body>`.
+@body-bg: #fafafa;
+//** Global text color on `<body>`.
+@text-color: #444444;
+
+@import "/less/typography.less";
+
+#header{
+	background-color: @header-color;
+	color: @header-text-color;
+}
+
+#bottom{
+	background-color: @bottom-color;
+	color: bottom-text-color;
+}
+
+#footer{
+	background-color: @footer-color;
+	color: footer-text-color;
+}
+
+html{
+	background-color: @footer-color
+}
+
+body { 
+	padding-top: 70px;	
+}
+
+/*admin bar*/
+.admin-bar .navbar-fixed-top{
+    top:28px;
+}
+
+section {
+	padding: 30px 0px;
+}
 
 /* Edit button */
 .post-edit-link {
-  font-size: 12px;
-  color: #999;
+  font-size: 12px;  
   opacity: 0;
 }
 .post:hover .post-edit-link,

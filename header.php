@@ -14,7 +14,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class() ?>>
-	  <header id="header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">		
+	  <header id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">		
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="container">
 			<div class="navbar-header">

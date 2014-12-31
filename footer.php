@@ -6,7 +6,7 @@
 </section><!--/#main-->
 <?php } ?>
 
-<section id="bottom" class="wet-asphalt">
+<section id="bottom">
   <div class="container">
     <div class="row">
       <?php dynamic_sidebar('bottom'); ?>
@@ -14,7 +14,7 @@
   </div>
 </section>
 
-<footer id="footer" class="midnight-blue">
+<footer id="footer">
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
@@ -22,15 +22,7 @@
       </div>
       <div class="col-sm-6">
         <ul class="pull-right">
-          <?php 
-          wp_nav_menu( array(
-            'theme_location' => 'footer',
-            'container'  => false,
-            'menu_class' => '',
-            'items_wrap'=>'%3$s'
-            )
-          );
-          ?>
+         
           <li>
             <a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a><!--#gototop-->
           </li>

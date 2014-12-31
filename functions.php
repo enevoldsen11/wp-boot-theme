@@ -128,8 +128,119 @@ if( ! function_exists('boot_pagination') ){
 				
 				return $pagination;
 			}
+		return;
+	}  
+}
+
+if ( ! function_exists( 'boot_post_nav' ) ) {
+
+	/**
+	 * Display post nav
+	 * @return [type] [description]
+	 */
+
+	function boot_post_nav() {
+		global $post;
+
+		// Don't print empty markup if there's nowhere to navigate.
+		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+		$next     = get_adjacent_post( false, '', false );
+
+		if ( ! $next and ! $previous ){
 			return;
-		}  
+		} 
+		?>
+		<nav class="navigation post-navigation" role="navigation">
+			<div class="pager">
+				<?php if ( $previous ) { ?>
+				<li class="previous">
+					<?php previous_post_link( '%link', _x( '<i class="icon-long-arrow-left"></i> %title', 'Previous post link', ZEETEXTDOMAIN ) ); ?>
+				</li>
+				<?php } ?>
+
+				<?php if ( $next ) { ?>
+				<li class="next"><?php next_post_link( '%link', _x( '%title <i class="icon-long-arrow-right"></i>', 'Next post link', ZEETEXTDOMAIN ) ); ?></li>
+				<?php } ?>
+
+			</div><!-- .nav-links -->
+		</nav><!-- .navigation -->
+		<?php
 	}
+}
+	
+if( ! function_exists("boot_comments_list") ){
+
+	/**
+	 * Comments link
+	 * @param   $comment [comments]
+	 * @param   $args    [arguments]
+	 * @param   $depth   [depth]
+	 * @return void          
+	 */
+	function boot_comments_list($comment, $args, $depth) {
+
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) {
+			case 'pingback' :
+			case 'trackback' :
+			// Display trackbacks differently than normal comments.
+			?>
+			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<p><?php _e( 'Pingback:', BOOTTHEME ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', BOOTTHEME ), '<span class="edit-link">', '</span>' ); ?></p>
+				<?php
+				break;
+				default :
+				// Proceed with normal comments.
+				global $post;
+				?>
+				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+					<div id="comment-<?php comment_ID(); ?>" class="comment media">
+						<div class="pull-left comment-author vcard">
+							<?php 
+							$get_avatar = get_avatar( $comment, 48 );
+							$avatar_img = zee_get_avatar_url($get_avatar);
+								 //Comment author avatar 
+							?>
+							<img class="avatar img-circle" src="<?php echo $avatar_img ?>" alt="">
+						</div>
+
+						<div class="media-body">
+
+							<div class="well">
+
+								<div class="comment-meta media-heading">
+									<span class="author-name">
+										<?php _e('By', BOOTTHEME); ?> <strong><?php echo get_comment_author(); ?></strong>
+									</span>
+									-
+									<time datetime="<?php echo get_comment_date(); ?>">
+										<?php echo get_comment_date(); ?> <?php echo get_comment_time(); ?>
+										<?php edit_comment_link( __( 'Edit', BOOTTHEME ), '<small class="edit-link">', '</small>' ); //edit link ?>
+									</time>
+
+									<span class="reply pull-right">
+										<?php comment_reply_link( array_merge( $args, array( 'reply_text' =>  sprintf( __( '%s Reply', BOOTTHEME ), '<i class="icon-repeat"></i> ' ) , 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+									</span><!-- .reply -->
+								</div>
+
+								<?php if ( '0' == $comment->comment_approved ) {  //Comment moderation ?>
+								<div class="alert alert-info"><?php _e( 'Your comment is awaiting moderation.', BOOTTHEME ); ?></div>
+								<?php } ?>
+
+								<div class="comment-content comment">
+									<?php comment_text(); //Comment text ?>
+								</div><!-- .comment-content -->
+
+							</div><!-- .well -->
+
+
+						</div>
+					</div><!-- #comment-## -->
+					<?php
+					break;
+		} // end comment_type check
+
+	}
+}
 ?>
 

@@ -9,9 +9,9 @@ if ( is_active_sidebar( 'sidebar' ) ) {
     <div id="content" class="site-content <?php echo $col; ?>" role="main">
         <?php /* The loop */ ?>
         <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
-        <?php get_template_part( 'post-templates/content', get_post_format() ); ?>
-        <?php zee_post_nav(); ?>
-        <?php blog_comments(); ?>
+        <?php get_template_part( 'content', get_post_format() ); ?>
+        <?php boot_post_nav(); ?>
+        <?php //blog_comments(); ?>
         <?php } } ?>
     </div><!--/#content -->
     <?php get_sidebar(); ?>
