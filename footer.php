@@ -17,17 +17,14 @@
 <footer id="footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
-       
-      </div>
-      <div class="col-sm-6">
-        <ul class="pull-right">
-         
-          <li>
-            <a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a><!--#gototop-->
-          </li>
-        </ul>
-      </div>
+      
+		 <?php dynamic_sidebar('footer'); ?>
+      
+    
+        <div class="pull-right">        
+            <a id="gototop" class="gototop" href="#"><i class="fa fa-chevron-up"></i></a><!--#gototop-->         
+        </div>
+      
     </div>
   </div>
 </footer><!--/#footer-->

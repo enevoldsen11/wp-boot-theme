@@ -18,7 +18,17 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'BOOTTHEME' ),
 ) );
 
-// registering sidebar
+// registering widgets
+register_sidebar(array(
+  'name' => __( 'Header', ZEETEXTDOMAIN ),
+  'id' => 'header',
+  'description' => __( 'Widgets in this area will be shown after header in the home page.' , ZEETEXTDOMAIN),
+  'before_title' => '<h3>',
+  'after_title' => '</h3>',
+  'before_widget' => '<div >',
+  'after_widget' => '</div>'
+  )
+);
 
 register_sidebar(array(
   'name' => __( 'Sidebar', ZEETEXTDOMAIN ),
@@ -34,7 +44,7 @@ register_sidebar(array(
 register_sidebar(array(
   'name' => __( 'Bottom', ZEETEXTDOMAIN ),
   'id' => 'bottom',
-  'description' => __( 'Widgets in this area will be shown before Footer.' , ZEETEXTDOMAIN),
+  'description' => __( 'Widgets in this area will be shown before footer.' , ZEETEXTDOMAIN),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div class="col-sm-3 col-xs-6">',
@@ -43,12 +53,12 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Header', ZEETEXTDOMAIN ),
-  'id' => 'header',
-  'description' => __( 'Widgets in this area will be shown after Header in the home page.' , ZEETEXTDOMAIN),
-  'before_title' => '<h3>',
-  'after_title' => '</h3>',
-  'before_widget' => '<div class="">',
+  'name' => __( 'Footer', ZEETEXTDOMAIN ),
+  'id' => 'footer',
+  'description' => __( 'Widgets in this area will be shown in the footer' , ZEETEXTDOMAIN),
+  'before_title' => '<h4>',
+  'after_title' => '</h4>',
+  'before_widget' => '<div class="col-sm-3 col-xs-6">',
   'after_widget' => '</div>'
   )
 );

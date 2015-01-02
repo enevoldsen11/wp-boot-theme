@@ -1,8 +1,6 @@
 @import "/less/bootstrap/less/bootstrap.less";
 @import "/less/font-awesome/less/font-awesome.less";
 
-@fa-font-path: "/less/font-awesome/fonts";
-
 /*
 Basic variables
 */
@@ -53,12 +51,13 @@ Gray and brand colors for use across Bootstrap.
 
 #bottom{
 	background-color: @bottom-color;
-	color: bottom-text-color;
+	color: @bottom-text-color;
 }
 
 #footer{
 	background-color: @footer-color;
-	color: footer-text-color;
+	color: @footer-text-color;
+	padding: 30px 0px;
 }
 
 html{
