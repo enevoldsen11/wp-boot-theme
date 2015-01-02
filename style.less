@@ -7,6 +7,22 @@
 Basic variables
 */
 
+/*
+Gray and brand colors for use across Bootstrap.
+*/
+@gray-darker:            lighten(#000, 13.5%); // #222
+@gray-dark:              #7b8a8b;   // #333
+@gray:                   #95a5a6; // #555
+@gray-light:             #b4bcc2;   // #999
+@gray-lighter:           #ecf0f1; // #eee
+
+
+@brand-primary:         #d8283d;
+@brand-success:         #18BC9C;
+@brand-info:            #3498DB;
+@brand-warning:         #F39C12;
+@brand-danger:          #E74C3C;
+
 @header-color: #222222;
 @header-text-color: #ffffff; 
 
@@ -17,9 +33,9 @@ Basic variables
 @footer-text-color: @header-text-color;
 
 //** Global textual link color.
-@link-color: #d8283d;
+@link-color: @brand-primary;
 //** Link hover color set via `darken()` function.
-@link-hover-color:  darken(@link-color, 5%);
+@link-hover-color:  darken(@link-color, 10%);
 
 //** Background color for `<body>`.
 @body-bg: #fafafa;
@@ -27,6 +43,8 @@ Basic variables
 @text-color: #444444;
 
 @import "/less/typography.less";
+@import "/less/navbar.less";
+@import "/less/components.less";
 
 #header{
 	background-color: @header-color;
@@ -48,7 +66,7 @@ html{
 }
 
 body { 
-	padding-top: 70px;	
+	padding-top: 57px;	
 }
 
 /*admin bar*/

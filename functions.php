@@ -18,6 +18,40 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'BOOTTHEME' ),
 ) );
 
+// registering sidebar
+
+register_sidebar(array(
+  'name' => __( 'Sidebar', ZEETEXTDOMAIN ),
+  'id' => 'sidebar',
+  'description' => __( 'Widgets in this area will be shown on right side.', ZEETEXTDOMAIN ),
+  'before_title' => '<h3>',
+  'after_title' => '</h3>',
+  'before_widget' => '<div>',
+  'after_widget' => '</div>'
+  )
+);
+
+register_sidebar(array(
+  'name' => __( 'Bottom', ZEETEXTDOMAIN ),
+  'id' => 'bottom',
+  'description' => __( 'Widgets in this area will be shown before Footer.' , ZEETEXTDOMAIN),
+  'before_title' => '<h3>',
+  'after_title' => '</h3>',
+  'before_widget' => '<div class="col-sm-3 col-xs-6">',
+  'after_widget' => '</div>'
+  )
+);
+
+register_sidebar(array(
+  'name' => __( 'Header', ZEETEXTDOMAIN ),
+  'id' => 'header',
+  'description' => __( 'Widgets in this area will be shown after Header in the home page.' , ZEETEXTDOMAIN),
+  'before_title' => '<h3>',
+  'after_title' => '</h3>',
+  'before_widget' => '<div class="">',
+  'after_widget' => '</div>'
+  )
+);
 
 // Functions
 
@@ -239,8 +273,64 @@ if( ! function_exists("boot_comments_list") ){
 					<?php
 					break;
 		} // end comment_type check
-
 	}
 }
+
+function new_content_more($more) {
+       global $post;
+       return ' <a href="' . get_permalink() . "#more-{$post->ID}\" class=\"btn btn-primary\">Read More...</a>";
+}   
+add_filter( 'the_content_more_link', 'new_content_more' );
+
+function new_excerpt_more($more) {
+    return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+function the_excerpt_more_link( $excerpt ){
+    $post = get_post();
+    $excerpt .= '<a href="'. get_permalink($post->ID) . '" class="btn btn-primary">Read More...</a>';
+    return $excerpt;
+}
+add_filter( 'the_excerpt', 'the_excerpt_more_link');
+
+/*
+	Theme customizer
+*/
+function boot_theme_customizer( $wp_customize ) {
+    // Fun code will go here
+	$wp_customize->add_section( 'boot_logo_section' , array(
+    'title'       => __( 'Logo', 'boot' ),
+    'priority'    => 30,
+    'description' => 'Upload a logo to replace the default site name and description in the header',
+	) );
+
+	$wp_customize->add_setting( 'boot_logo' );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'boot_logo', array(
+    'label'    => __( 'Logo', 'boot' ),
+    'section'  => 'boot_logo_section',
+    'settings' => 'boot_logo',
+	) ) );
+	
+	//Favicon
+	$wp_customize->add_section( 'boot_favicon_section' , array(
+    'title'       => __( 'Favicon', 'boot' ),
+    'priority'    => 31,
+    'description' => 'Upload a favicon',
+	) );
+
+	$wp_customize->add_setting( 'boot_favicon' );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'boot_favicon', array(
+		'label'    => __( 'Favicon', 'boot' ),
+		'section'  => 'boot_favicon_section',
+		'settings' => 'boot_favicon',
+	) ) );
+}
+add_action('customize_register', 'boot_theme_customizer');
+
+
+
 ?>
 
