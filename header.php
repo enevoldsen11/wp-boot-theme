@@ -32,7 +32,11 @@
 					</a>
 				<?php } 
 				
-				wp_nav_menu( array(
+				
+			?>
+
+			</div>			
+			<?php wp_nav_menu( array(
 					'menu'              => 'primary',
 					'theme_location'    => 'primary',
 					'depth'             => 2,
@@ -43,7 +47,6 @@
 					'walker'            => new wp_bootstrap_navwalker())
 				);
 			?>
-			</div>			
 		</div>
 	</header><!--/#header-->
 	<?php get_template_part( 'sub', 'title' ); ?>
