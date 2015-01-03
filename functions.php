@@ -7,9 +7,6 @@ if ( ! is_admin() ){
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.less' );
 }  
 
-// you can also use .less files as mce editor style sheets
-add_editor_style( 'editor-style.less' );
-
 // Register Navigation Walker
 require_once(get_template_directory().'/lib/wp_bootstrap_navwalker.php');
 
@@ -340,7 +337,11 @@ function boot_theme_customizer( $wp_customize ) {
 }
 add_action('customize_register', 'boot_theme_customizer');
 
+/*
+	Theme options
+*/
 
+require_once ( get_template_directory() . '/admin/style-editor.php' );
 
 ?>
 

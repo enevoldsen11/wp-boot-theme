@@ -5,6 +5,7 @@
 		$col = 'col-md-8';
 	}
 ?>
+  
 <div class="row">
     <div id="content" class="site-content <?php echo $col; ?>" role="main">
         <?php 
