@@ -20,7 +20,9 @@ Gray and brand colors for use across Bootstrap.
 @brand-warning: #F39C12;
 @brand-danger: #E74C3C;
 
-@header-color: #333333;
+@import url("//fonts.googleapis.com/css?family=Lato:400,700,400italic");
+
+@header-color: #222222;
 @header-text-color: #ffffff; 
 
 @bottom-color: lighten(@header-color, 5%); 
@@ -42,6 +44,10 @@ Gray and brand colors for use across Bootstrap.
 @import "/less/typography.less";
 @import "/less/navbar.less";
 @import "/less/components.less";
+@import "/less/tables.less";
+
+@import "/less/post.less";
+@import "/less/archive.less";
 
 #header{
 	background-color: @header-color;
@@ -76,34 +82,3 @@ section {
 	padding: 30px 0px;
 }
 
-/* Edit button */
-.post-edit-link {
-  font-size: 12px;  
-  opacity: 0;
-}
-.post:hover .post-edit-link,
-.page:hover .post-edit-link {
-  opacity: 1;
-}
-
-.post .entry-meta,
-article.attachment .entry-meta {
-  margin-bottom: 20px;
-}
-.post .entry-meta ul,
-article.attachment .entry-meta ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.post .entry-meta ul li,
-article.attachment .entry-meta ul li {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 12px;
-  color: #999;
-}
-.post .entry-meta ul li a,
-article.attachment .entry-meta ul li a {
-  color: #999;
-}

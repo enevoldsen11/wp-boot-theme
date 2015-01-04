@@ -15,7 +15,7 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'BOOTTHEME' ),
 ) );
 
-// registering widgets
+// Registering widgets
 register_sidebar(array(
   'name' => __( 'Header', ZEETEXTDOMAIN ),
   'id' => 'header',
@@ -60,6 +60,9 @@ register_sidebar(array(
   )
 );
 
+//Add theme support for thumbnails
+add_theme_support( 'post-thumbnails' ); 
+
 // Functions
 
 if( ! function_exists('boot_scripts') ){	
@@ -68,9 +71,8 @@ if( ! function_exists('boot_scripts') ){
 
 		// Javascripts
         wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery'));
-       		
-		// Inline css
-        //wp_add_inline_style( 'style',       zee_style_options() );
+		wp_enqueue_script('application-js', get_template_directory_uri().'/js/application.js', array('jquery'));
+				
     }
 	
 	// Adding scripts

@@ -1,25 +1,21 @@
-<?php get_header(); 
-$col= 'col-md-12';
-if ( is_active_sidebar( 'sidebar' ) ) {
-    $col = 'col-md-8';
-} 
-?>
+<?php get_header(); ?>
+
 <div class="row">
-    <div id="content" class="site-content <?php echo $col ?>" role="main">
+    <div id="content" class="site-content col-md-8" role="main">
         <?php if ( have_posts() ) { ?>
-        <header class="page-header">
-            <h1 class="page-title"><?php printf( __( 'Search Results for: %s', ZEETEXTDOMAIN ), get_search_query() ); ?></h1>
+        <header class="page-header archive-header">
+            <h1 class="page-title"><?php printf( __( 'Search Results for: %s', boottheme ), get_search_query() ); ?></h1>
         </header>
         <?php /* The loop */ ?>
         <?php while ( have_posts() ) { the_post(); 
             ?>
-            <?php get_template_part( 'post-templates/content', 'search' ); ?>
+            <?php get_template_part( 'content', 'search' ); ?>
             <?php } ?>
-            <?php echo zee_pagination(); ?>
+            <?php echo boot_pagination(); ?>
             <?php } else { ?>
-            <?php get_template_part( 'post-templates/content', 'none' ); ?>
+            <?php get_template_part( 'content', 'none' ); ?>
             <?php } ?>
         </div><!-- #content -->
-        <?php get_sidebar(); ?>
+        <?php get_template_part( 'archive-sidebar' ) ?>
     </div>
     <?php get_footer(); ?>

@@ -1,12 +1,5 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-
-        <?php if ( has_post_thumbnail() && ! post_password_required() ) { ?>
-        <div class="entry-thumbnail">
-            <?php the_post_thumbnail(); ?>
-        </div>
-        <?php } //.entry-thumbnail ?>
-
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>    	
+	<header class="entry-header">		
         <?php if ( is_single() ) { ?>
         <h1 class="entry-title">
             <?php the_title(); ?>
@@ -21,8 +14,8 @@
             <?php edit_post_link( __( 'Edit', BOOTTHEME ), '<small class="edit-link pull-right">', '</small>' ); ?>
         </h2>
         <?php } //.entry-title ?>
-
-        <div class="entry-meta">
+        <?php if ( get_post_type( $post ) != 'page'){ ?>
+		<div class="entry-meta">
             <ul>
                 <li class="date"><?php echo __('Posted On', BOOTTHEME ); ?> <time class="entry-date" datetime="<?php the_time( 'c' ); ?>"><?php the_time('j M Y'); ?></time></li>
                 <li class="author"><?php echo __('By', BOOTTHEME ); ?> <?php the_author_posts_link() ?></li>
@@ -34,26 +27,28 @@
                 <?php } //.comment-link ?>                       
             </ul>
         </div><!--/.entry-meta -->
-
+		<?php } ?>
     </header><!--/.entry-header -->
-
+	<?php if ( has_post_thumbnail() && ! post_password_required() ) { ?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div>
+	<?php } //.entry-thumbnail ?>
     <?php if ( is_search() ) { ?>
-    <div class="entry-summary">
-        <?php the_excerpt(); ?>
-    </div> <!--/.entry-summary -->
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
+		</div> <!--/.entry-summary -->
     <?php } else { ?>
-    <div class="entry-content">
-        <?php if ( has_excerpt( get_the_ID() ) && is_home()){			
-			the_excerpt();			
-		}else{
-			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', BOOTTHEME ) );
-		}
-		?>		
-    </div>
+		<div class="entry-content">
+			<?php if ( has_excerpt( get_the_ID() ) && is_home()){			
+				the_excerpt();			
+			}else{
+				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', boottheme ) );
+			}
+			?>		
+		</div>
     <?php } //.entry-content ?>
-
     <div>
         <?php boot_link_pages(); ?>
     </div>
-
 </article><!--/#post-->

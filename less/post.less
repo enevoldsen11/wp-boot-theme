@@ -1,0 +1,64 @@
+.post {
+	margin-bottom: 25px;
+}
+
+/* Thumbnail */
+.post .entry-thumbnail,
+article.attachment .entry-thumbnail {
+	margin-bottom: 20px;
+	text-align: center;
+	
+}
+.post .entry-thumbnail img,
+article.attachment .entry-thumbnail img {
+	max-width: 100%;	
+	height: auto;
+	border-radius: @border-radius-small;
+}
+
+/* Edit button */
+.post-edit-link {
+  font-size: 12px;  
+  opacity: 0;
+}
+.post:hover .post-edit-link,
+.page:hover .post-edit-link {
+  opacity: 1;
+}
+
+/* Eentry-header */
+.post .entry-header {
+	margin-bottom: 15px;
+}
+
+/* Entry-meta */
+.post .entry-meta ul,
+article.attachment .entry-meta ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post .entry-meta ul li,
+article.attachment .entry-meta ul li {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 12px;
+  color: @gray-dark;
+}
+
+.post .entry-meta ul li a,
+article.attachment .entry-meta ul li a {
+  color: @gray-light;
+}
+
+.post .entry-meta ul li a:hover,
+article.attachment .entry-meta ul li a:hover {
+  color: @link-color;
+}
+
+.post sup.featured-post,
+article.attachment sup.featured-post {
+  font-size: 13px;
+  top: -10px;
+}
