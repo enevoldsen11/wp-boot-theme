@@ -18,18 +18,15 @@
   <div class="container">
     <div class="row">
       
-		 <?php dynamic_sidebar('footer'); ?>
-      
+		 <?php dynamic_sidebar('footer'); ?>      
     
-        <div class="pull-right">        
+        <div class="scroll-top pull-right">        
             <a id="gototop" class="gototop" href="#"><i class="fa fa-chevron-up"></i></a><!--#gototop-->         
         </div>
       
     </div>
   </div>
 </footer><!--/#footer-->
-
-<?php //google_analytics();?>
 
 <?php wp_footer(); ?>
 

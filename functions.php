@@ -12,14 +12,14 @@ require_once(get_template_directory().'/lib/wp_bootstrap_navwalker.php');
 
 // Register Menu
 register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'BOOTTHEME' ),
+    'primary' => __( 'Primary Menu', 'boottheme' ),
 ) );
 
 // Registering widgets
 register_sidebar(array(
-  'name' => __( 'Header', ZEETEXTDOMAIN ),
+  'name' => __( 'Header', boottheme ),
   'id' => 'header',
-  'description' => __( 'Widgets in this area will be shown after header in the home page.' , ZEETEXTDOMAIN),
+  'description' => __( 'Widgets in this area will be shown after header in the home page.' , boottheme),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div >',
@@ -28,9 +28,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Sidebar', ZEETEXTDOMAIN ),
+  'name' => __( 'Sidebar', boottheme ),
   'id' => 'sidebar',
-  'description' => __( 'Widgets in this area will be shown on right side.', ZEETEXTDOMAIN ),
+  'description' => __( 'Widgets in this area will be shown on right side.', boottheme ),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div>',
@@ -39,9 +39,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Bottom', ZEETEXTDOMAIN ),
+  'name' => __( 'Bottom', boottheme ),
   'id' => 'bottom',
-  'description' => __( 'Widgets in this area will be shown before footer.' , ZEETEXTDOMAIN),
+  'description' => __( 'Widgets in this area will be shown before footer.' , boottheme),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div class="col-sm-3 col-xs-6">',
@@ -50,9 +50,9 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Footer', ZEETEXTDOMAIN ),
+  'name' => __( 'Footer', boottheme ),
   'id' => 'footer',
-  'description' => __( 'Widgets in this area will be shown in the footer' , ZEETEXTDOMAIN),
+  'description' => __( 'Widgets in this area will be shown in the footer' , boottheme),
   'before_title' => '<h4>',
   'after_title' => '</h4>',
   'before_widget' => '<div class="col-sm-3 col-xs-6">',
@@ -88,8 +88,8 @@ if( ! function_exists('boot_link_pages') ){
             'link_before' => '', 
             'link_after' => '',
             'next_or_number' => 'number', 
-            'nextpagelink' => __('Next page', BOOTTHEME),
-            'previouspagelink' => __('Previous page', BOOTTHEME), 
+            'nextpagelink' => __('Next page', boottheme),
+            'previouspagelink' => __('Previous page', boottheme), 
             'pagelink' => '%',
             'echo' => 1
             );
@@ -197,12 +197,12 @@ if ( ! function_exists( 'boot_post_nav' ) ) {
 			<div class="pager">
 				<?php if ( $previous ) { ?>
 				<li class="previous">
-					<?php previous_post_link( '%link', _x( '<i class="icon-long-arrow-left"></i> %title', 'Previous post link', ZEETEXTDOMAIN ) ); ?>
+					<?php previous_post_link( '%link', _x( '<i class="icon-long-arrow-left"></i> %title', 'Previous post link', boottheme ) ); ?>
 				</li>
 				<?php } ?>
 
 				<?php if ( $next ) { ?>
-				<li class="next"><?php next_post_link( '%link', _x( '%title <i class="icon-long-arrow-right"></i>', 'Next post link', ZEETEXTDOMAIN ) ); ?></li>
+				<li class="next"><?php next_post_link( '%link', _x( '%title <i class="icon-long-arrow-right"></i>', 'Next post link', boottheme ) ); ?></li>
 				<?php } ?>
 
 			</div><!-- .nav-links -->
@@ -229,7 +229,7 @@ if( ! function_exists("boot_comments_list") ){
 			// Display trackbacks differently than normal comments.
 			?>
 			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-				<p><?php _e( 'Pingback:', BOOTTHEME ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', BOOTTHEME ), '<span class="edit-link">', '</span>' ); ?></p>
+				<p><?php _e( 'Pingback:', boottheme ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', boottheme ), '<span class="edit-link">', '</span>' ); ?></p>
 				<?php
 				break;
 				default :
@@ -241,7 +241,7 @@ if( ! function_exists("boot_comments_list") ){
 						<div class="pull-left comment-author vcard">
 							<?php 
 							$get_avatar = get_avatar( $comment, 48 );
-							$avatar_img = zee_get_avatar_url($get_avatar);
+							$avatar_img = boot_get_avatar_url($get_avatar);
 								 //Comment author avatar 
 							?>
 							<img class="avatar img-circle" src="<?php echo $avatar_img ?>" alt="">
@@ -252,22 +252,25 @@ if( ! function_exists("boot_comments_list") ){
 							<div class="well">
 
 								<div class="comment-meta media-heading">
-									<span class="author-name">
-										<?php _e('By', BOOTTHEME); ?> <strong><?php echo get_comment_author(); ?></strong>
+									<span class="author-meta">
+										<span class="author-name">
+											<?php _e('By', boottheme); ?> <strong><?php echo get_comment_author(); ?></strong>
+										</span>
+										-
+										<time datetime="<?php echo get_comment_date(); ?>">
+											<?php echo get_comment_date(); ?> <?php echo get_comment_time(); ?>										
+										</time>
 									</span>
-									-
-									<time datetime="<?php echo get_comment_date(); ?>">
-										<?php echo get_comment_date(); ?> <?php echo get_comment_time(); ?>
-										<?php edit_comment_link( __( 'Edit', BOOTTHEME ), '<small class="edit-link">', '</small>' ); //edit link ?>
-									</time>
-
+									<span class="pull-right">
+										<?php edit_comment_link( __( 'Edit', boottheme ), '<small class="edit-link">', '</small>') ?>
+									</span>
 									<span class="reply pull-right">
-										<?php comment_reply_link( array_merge( $args, array( 'reply_text' =>  sprintf( __( '%s Reply', BOOTTHEME ), '<i class="icon-repeat"></i> ' ) , 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+										<?php comment_reply_link( array_merge( $args, array( 'reply_text' =>  sprintf( __( '%s Reply', boottheme ), '<i class="fa fa-reply"></i> ' ) , 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 									</span><!-- .reply -->
 								</div>
 
 								<?php if ( '0' == $comment->comment_approved ) {  //Comment moderation ?>
-								<div class="alert alert-info"><?php _e( 'Your comment is awaiting moderation.', BOOTTHEME ); ?></div>
+								<div class="alert alert-warning"><?php _e( 'Your comment is awaiting moderation.', boottheme ); ?></div>
 								<?php } ?>
 
 								<div class="comment-content comment">
@@ -285,9 +288,205 @@ if( ! function_exists("boot_comments_list") ){
 	}
 }
 
+if( ! function_exists('boot_get_avatar_url') ){
+	/**
+	 * Get avatar url
+	 * @param  [string] $get_avatar [Avater image link]
+	 * @return [string]             [image link]
+	 */
+	function boot_get_avatar_url($get_avatar){
+		preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+		return $matches[1];
+	}
+}
+
+//Comments On Pages
+if (!function_exists("comments_page")) {
+    function comments_page(){
+        if(is_page()){
+            comments_template();
+        }
+    }
+}
+
+//Comments On Blog
+if (!function_exists("comments_post")) {
+    function comments_post(){
+        if(is_single()){
+            comments_template();
+        }
+    }
+}
+
+if( ! function_exists('boot_comment_form') ){
+
+/**
+ * Comment form
+ */
+
+function boot_comment_form($args = array(), $post_id = null ){
+
+
+    if ( null === $post_id )
+        $post_id = get_the_ID();
+    else
+        $id = $post_id;
+
+    $commenter = wp_get_current_commenter();
+    $user = wp_get_current_user();
+    $user_identity = $user->exists() ? $user->display_name : '';
+
+    if ( ! isset( $args['format'] ) )
+        $args['format'] = current_theme_supports( 'html5', 'comment-form' ) ? 'html5' : 'xhtml';
+
+
+    $req      = get_option( 'require_name_email' );
+
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+
+    $html5    = 'html5' === $args['format'];
+
+    $fields   =  array(
+        'author' => '
+        <div class="form-group">
+        <div class="col-sm-6 comment-form-author">
+        <input   class="form-control"  id="author" 
+        placeholder="' . __( 'Name', ZEETEXTDOMAIN ) . '" name="author" type="text" 
+        value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' />
+        </div>',
+
+
+        'email'  => '<div class="col-sm-6 comment-form-email">
+        <input id="email" class="form-control" name="email" 
+        placeholder="' . __( 'Email', ZEETEXTDOMAIN ) . '" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' 
+        value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' />
+        </div>
+        </div>',
+        
+        );
+
+$required_text = sprintf( ' ' . __('Required fields are marked %s', ZEETEXTDOMAIN), '<span class="required">*</span>' );
+
+$defaults = array(
+    'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
+
+    'comment_field'        => '
+    <div class="form-group comment-form-comment">
+    <div class="col-sm-12">
+    <textarea class="form-control" id="comment" name="comment" placeholder="' . _x( 'Comment', 'noun', ZEETEXTDOMAIN ) . '" rows="8" aria-required="true"></textarea>
+    </div>
+    </div>
+    ',
+
+    'must_log_in'          => '
+
+
+    <div class="alert alert-danger must-log-in">' 
+    . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) 
+    . '</div>',
+
+    'logged_in_as'         => '<div class="alert alert-warning logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', ZEETEXTDOMAIN ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</div>',
+
+    'comment_notes_before' => '<div class="alert alert-warning comment-notes">' . __( 'Your email address will not be published.', ZEETEXTDOMAIN ) . ( $req ? $required_text : '' ) . '</div>',
+
+    'comment_notes_after'  => '<div class="alert alert-warning form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', ZEETEXTDOMAIN ), ' <code>' . allowed_tags() . '</code>' ) . '</div>',
+
+    'id_form'              => 'commentform',
+
+    'id_submit'            => 'submit',
+
+    'title_reply'          => __( 'Leave a Reply', ZEETEXTDOMAIN ),
+
+    'title_reply_to'       => __( 'Leave a Reply to %s', ZEETEXTDOMAIN ),
+
+    'cancel_reply_link'    => __( 'Cancel reply', ZEETEXTDOMAIN ),
+
+    'label_submit'         => __( 'Post Comment', ZEETEXTDOMAIN ),
+
+    'format'               => 'xhtml',
+    );
+
+
+$args = wp_parse_args( $args, apply_filters( 'comment_form_defaults', $defaults ) );
+
+if ( comments_open( $post_id ) ) { ?>
+
+<?php do_action( 'comment_form_before' ); ?>
+
+<div id="respond" class="comment-respond">
+
+    <h3 id="reply-title" class="comment-reply-title">
+        <?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> 
+        <span class="pull-right"><small><?php cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></small></span>
+    </h3>
+
+    <?php if ( get_option( 'comment_registration' ) && !is_user_logged_in() ) { ?>
+
+    <?php echo $args['must_log_in']; ?>
+
+    <?php do_action( 'comment_form_must_log_in_after' ); ?>
+
+    <?php } else { ?>
+
+    <form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>" 
+        class="form-horizontal comment-form"<?php echo $html5 ? ' novalidate' : ''; ?> role="form">
+        <?php do_action( 'comment_form_top' ); ?>
+
+        <?php if ( is_user_logged_in() ) { ?>
+
+        <?php echo apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity ); ?>
+
+        <?php do_action( 'comment_form_logged_in_after', $commenter, $user_identity ); ?>
+
+        <?php } else { ?>
+
+        <?php echo $args['comment_notes_before']; ?>
+
+        <?php
+
+        do_action( 'comment_form_before_fields' );
+
+        foreach ( (array) $args['fields'] as $name => $field ) {
+            echo apply_filters( "comment_form_field_{$name}", $field ) . "\n";
+        }
+
+        do_action( 'comment_form_after_fields' );
+
+    } 
+
+    echo apply_filters( 'comment_form_field_comment', $args['comment_field'] ); 
+
+    echo $args['comment_notes_after']; ?>
+
+    <div class="form-submit">
+        <button class="btn btn-primary" name="submit" type="submit" id="<?php echo esc_attr( $args['id_submit'] ); ?>">
+			<?php echo esc_attr( $args['label_submit'] ); ?>
+			<i class="fa fa-send"></i>
+		</button>
+        <?php comment_id_fields( $post_id ); ?>
+    </div>
+
+    <?php do_action( 'comment_form', $post_id ); ?>
+
+</form>
+
+<?php } ?>
+
+</div><!-- #respond -->
+<?php do_action( 'comment_form_after' ); ?>
+<?php } else { ?>
+<?php do_action( 'comment_form_comments_closed' ); ?>
+<?php } ?>
+<?php
+
+
+}
+
+}
+
 function new_content_more($more) {
        global $post;
-       return ' <a href="' . get_permalink() . "#more-{$post->ID}\" class=\"btn btn-primary\">Read More...</a>";
+       return ' <a href="' . get_permalink() . "#more-{$post->ID}\" class=\"btn btn-primary\">Read More  <i class=\"fa fa-chevron-right\"></i></a>";
 }   
 add_filter( 'the_content_more_link', 'new_content_more' );
 

@@ -9,7 +9,7 @@ if ( post_password_required() ) {
     <?php if ( have_comments() ) { ?>
     <h2 class="comments-title">
         <?php
-        printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', ZEETEXTDOMAIN ),
+        printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', boottheme ),
             number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
             ?>
         </h2>
@@ -21,7 +21,7 @@ if ( post_password_required() ) {
                     'style'       => 'li',
                     'short_ping'  => true,
                     'avatar_size' => 74,
-                    'callback'    => 'zee_comments_list'
+                    'callback'    => 'boot_comments_list'
                     ) );
                     ?>
                 </ul><!-- .comment-list -->
@@ -33,10 +33,10 @@ if ( post_password_required() ) {
             // Are there comments to navigate through?
         if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
         <nav class="navigation comment-navigation" role="navigation">
-            <h3 class="screen-reader-text section-heading"><?php _e( 'Comment navigation', ZEETEXTDOMAIN ); ?></h3>
+            <h3 class="screen-reader-text section-heading"><?php _e( 'Comment navigation', boottheme ); ?></h3>
             <ul class="pager  comment-navigation">
-                <li class="previous"><?php previous_comments_link( __( '&larr; Older Comments', ZEETEXTDOMAIN ) ); ?></li>
-                <li class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', ZEETEXTDOMAIN ) ); ?></li>
+                <li class="previous"><?php previous_comments_link( __( '&larr; Older Comments', boottheme ) ); ?></li>
+                <li class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', boottheme ) ); ?></li>
             </ul>
 
         </nav><!-- .comment-navigation -->
@@ -44,10 +44,10 @@ if ( post_password_required() ) {
         <?php } // Check for comment navigation ?>
 
         <?php if ( ! comments_open() && get_comments_number() ) { ?>
-        <div class="alert alert-warning no-comments"><?php _e( 'Comments are closed.' , ZEETEXTDOMAIN ); ?></div>
+        <div class="alert alert-warning no-comments"><?php _e( 'Comments are closed.' , boottheme ); ?></div>
         <?php } else { 
 
-            zee_comment_form();
+            boot_comment_form();
         }
 
         ?>

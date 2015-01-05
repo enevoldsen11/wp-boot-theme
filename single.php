@@ -11,7 +11,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
         <?php if(have_posts()){ while ( have_posts() ) { the_post(); ?>
         <?php get_template_part( 'content', get_post_format() ); ?>
         <?php boot_post_nav(); ?>
-        <?php //blog_comments(); ?>
+        <?php comments_post(); ?>
         <?php } } ?>
     </div><!--/#content -->
     <?php get_sidebar(); ?>

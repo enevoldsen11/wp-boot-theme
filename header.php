@@ -49,13 +49,12 @@
 			?>
 		</div>
 	</header><!--/#header-->
-	<?php get_template_part( 'sub', 'title' ); ?>
-	
-		<?php 
-			if( is_home() ) {			 
-				dynamic_sidebar( 'header' );
-			}
-		?>
+		
+	<?php 
+		if( is_home() ) {			 
+			dynamic_sidebar( 'header' );
+		}
+	?>
 	
 	<?php if( ! is_page() ) { ?>
 	  <section id="main">

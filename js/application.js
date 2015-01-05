@@ -1,6 +1,8 @@
 jQuery(document).ready(function(){
   
 	controlNavbarPlacement();
+	
+	scrollToTop();
   
 });
 
@@ -20,5 +22,9 @@ function controlNavbarPlacement(){
 }
 
 function scrollToTop(){
-		
+	
+	jQuery( ".scroll-top" ).click(function() {
+		jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+		return false;
+	});	
 }
