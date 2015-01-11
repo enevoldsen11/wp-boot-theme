@@ -23,7 +23,7 @@
 				'include'            => '',
 				'hierarchical'       => 1,
 				'title_li'           => '',
-				'show_option_none'   => __( 'No categories' ),
+				'show_option_none'   => __( 'No categories', boottheme ),
 				'number'             => null,
 				'echo'               => 1,
 				'depth'              => 0,
