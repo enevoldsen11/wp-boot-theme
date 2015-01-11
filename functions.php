@@ -7,6 +7,9 @@ if ( ! is_admin() ){
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.less' );
 }  
 
+//Register textdomain
+load_theme_textdomain(boottheme, get_template_directory() . '/languages');
+
 // Register Navigation Walker
 require_once(get_template_directory().'/lib/wp_bootstrap_navwalker.php');
 
@@ -197,12 +200,12 @@ if ( ! function_exists( 'boot_post_nav' ) ) {
 			<div class="pager">
 				<?php if ( $previous ) { ?>
 				<li class="previous">
-					<?php previous_post_link( '%link', _x( '<i class="icon-long-arrow-left"></i> %title', 'Previous post link', boottheme ) ); ?>
+					<?php previous_post_link( '%link', '<i class="fa fa-arrow-left"></i>&nbsp;&nbsp;%title'); ?>
 				</li>
 				<?php } ?>
 
 				<?php if ( $next ) { ?>
-				<li class="next"><?php next_post_link( '%link', _x( '%title <i class="icon-long-arrow-right"></i>', 'Next post link', boottheme ) ); ?></li>
+				<li class="next"><?php next_post_link( '%link', '%title&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>'); ?></li>
 				<?php } ?>
 
 			</div><!-- .nav-links -->
@@ -229,7 +232,7 @@ if( ! function_exists("boot_comments_list") ){
 			// Display trackbacks differently than normal comments.
 			?>
 			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-				<p><?php _e( 'Pingback:', boottheme ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', boottheme ), '<span class="edit-link">', '</span>' ); ?></p>
+				<p><?php _e( 'Pingback:', boottheme ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', boottheme ), '<span class="edit-link">', '</span>' ); ?></p>
 				<?php
 				break;
 				default :
@@ -351,21 +354,21 @@ function boot_comment_form($args = array(), $post_id = null ){
         <div class="form-group">
         <div class="col-sm-6 comment-form-author">
         <input   class="form-control"  id="author" 
-        placeholder="' . __( 'Name', ZEETEXTDOMAIN ) . '" name="author" type="text" 
+        placeholder="' . __( 'Name', boottheme ) . '" name="author" type="text" 
         value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' />
         </div>',
 
 
         'email'  => '<div class="col-sm-6 comment-form-email">
         <input id="email" class="form-control" name="email" 
-        placeholder="' . __( 'Email', ZEETEXTDOMAIN ) . '" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' 
+        placeholder="' . __( 'Email', boottheme ) . '" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' 
         value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' />
         </div>
         </div>',
         
         );
 
-$required_text = sprintf( ' ' . __('Required fields are marked %s', ZEETEXTDOMAIN), '<span class="required">*</span>' );
+$required_text = sprintf( ' ' . __('Required fields are marked %s', boottheme), '<span class="required">*</span>' );
 
 $defaults = array(
     'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
@@ -373,7 +376,7 @@ $defaults = array(
     'comment_field'        => '
     <div class="form-group comment-form-comment">
     <div class="col-sm-12">
-    <textarea class="form-control" id="comment" name="comment" placeholder="' . _x( 'Comment', 'noun', ZEETEXTDOMAIN ) . '" rows="8" aria-required="true"></textarea>
+    <textarea class="form-control" id="comment" name="comment" placeholder="' . _x( 'Comment', 'noun', boottheme ) . '" rows="8" aria-required="true"></textarea>
     </div>
     </div>
     ',
@@ -381,27 +384,27 @@ $defaults = array(
     'must_log_in'          => '
 
 
-    <div class="alert alert-danger must-log-in">' 
-    . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) 
+    <div class="alert alert-warning must-log-in">' 
+    . sprintf( __( 'You must be %s to post a comment.', boottheme ), '<a href="'.wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ).'"/>'.__('logged in', boottheme).'</a>' ) 
     . '</div>',
 
-    'logged_in_as'         => '<div class="alert alert-warning logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', ZEETEXTDOMAIN ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</div>',
+    'logged_in_as'         => '<div class="alert alert-warning logged-in-as">' . sprintf( __( 'Logged in as %1$s. %2$s', boottheme ), '<a href="'.get_edit_user_link().'"/>'.$user_identity.'</a>', '<a href="'.wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ).'"/>'.__('Log out', boottheme).'</a>' ) . '</div>',
 
-    'comment_notes_before' => '<div class="alert alert-warning comment-notes">' . __( 'Your email address will not be published.', ZEETEXTDOMAIN ) . ( $req ? $required_text : '' ) . '</div>',
+    'comment_notes_before' => '<div class="alert alert-warning comment-notes">' . __( 'Your email address will not be published.', boottheme ) . ( $req ? $required_text : '' ) . '</div>',
 
-    'comment_notes_after'  => '<div class="alert alert-warning form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', ZEETEXTDOMAIN ), ' <code>' . allowed_tags() . '</code>' ) . '</div>',
+    'comment_notes_after'  => '<div class="alert alert-warning form-allowed-tags">' . sprintf( __( 'You may use these %1$s tags and attributes: %2$s', boottheme ), '<abbr title="HyperText Markup Language">HTML</abbr>',  ' <code>' . allowed_tags() . '</code>' ) . '</div>',
 
     'id_form'              => 'commentform',
 
     'id_submit'            => 'submit',
 
-    'title_reply'          => __( 'Leave a Reply', ZEETEXTDOMAIN ),
+    'title_reply'          => __( 'Leave a Reply', boottheme ),
 
-    'title_reply_to'       => __( 'Leave a Reply to %s', ZEETEXTDOMAIN ),
+    'title_reply_to'       => __( 'Leave a Reply to %s', boottheme ),
 
-    'cancel_reply_link'    => __( 'Cancel reply', ZEETEXTDOMAIN ),
+    'cancel_reply_link'    => __( 'Cancel reply', boottheme ),
 
-    'label_submit'         => __( 'Post Comment', ZEETEXTDOMAIN ),
+    'label_submit'         => __( 'Post Comment', boottheme ),
 
     'format'               => 'xhtml',
     );
@@ -486,7 +489,7 @@ if ( comments_open( $post_id ) ) { ?>
 
 function new_content_more($more) {
        global $post;
-       return ' <a href="' . get_permalink() . "#more-{$post->ID}\" class=\"btn btn-primary\">Read More  <i class=\"fa fa-chevron-right\"></i></a>";
+       return ' <a href="' . get_permalink() . "#more-{$post->ID}\" class=\"btn btn-primary\">".__( "Read more", boottheme)."&nbsp;&nbsp;<i class=\"fa fa-chevron-right\"></i></a>";
 }   
 add_filter( 'the_content_more_link', 'new_content_more' );
 
@@ -497,7 +500,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 function the_excerpt_more_link( $excerpt ){
     $post = get_post();
-    $excerpt .= '<a href="'. get_permalink($post->ID) . '" class="btn btn-primary">Read More...</a>';
+    $excerpt .= '<a href="'. get_permalink($post->ID) . '" class="btn btn-primary">'.__( 'Read more', boottheme).'&nbsp;&nbsp;<i class=\"fa fa-chevron-right\"></i></a>';
     return $excerpt;
 }
 add_filter( 'the_excerpt', 'the_excerpt_more_link');

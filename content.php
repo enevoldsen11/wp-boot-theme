@@ -43,7 +43,7 @@
 			<?php if ( has_excerpt( get_the_ID() ) && is_home()){			
 				the_excerpt();			
 			}else{
-				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', boottheme ) );
+				the_content();
 			}
 			?>		
 		</div>

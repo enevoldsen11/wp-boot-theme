@@ -33,10 +33,9 @@ if ( post_password_required() ) {
             // Are there comments to navigate through?
         if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
         <nav class="navigation comment-navigation" role="navigation">
-            <h3 class="screen-reader-text section-heading"><?php _e( 'Comment navigation', boottheme ); ?></h3>
             <ul class="pager  comment-navigation">
-                <li class="previous"><?php previous_comments_link( __( '&larr; Older Comments', boottheme ) ); ?></li>
-                <li class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', boottheme ) ); ?></li>
+                <li class="previous"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;<?php previous_comments_link( __( 'Older comments', boottheme ) ); ?></li>
+                <li class="next"><?php next_comments_link( __( 'Newer comments', boottheme ) ); ?>&nbsp;&nbsp;<i class="fa fa-chevron-left"></i></li>
             </ul>
 
         </nav><!-- .comment-navigation -->

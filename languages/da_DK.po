@@ -1,0 +1,285 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boottheme\n"
+"POT-Creation-Date: 2015-01-11 23:34+0100\n"
+"PO-Revision-Date: 2015-01-11 23:35+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: Danish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../wp-boot-theme\n"
+
+#: ../wp-boot-theme/404.php:4
+msgid "404, Page not found"
+msgstr "404, siden blev ikke fundet"
+
+#: ../wp-boot-theme/404.php:5
+msgid "The page you are looking for doesnt exist or an other error occurred"
+msgstr "Den side du ledte efter eksisterer ikke."
+
+#: ../wp-boot-theme/404.php:6
+msgid "Back to the homepage"
+msgstr "Tilbage til forsiden"
+
+#: ../wp-boot-theme/archive-sidebar.php:4
+msgid "Search in archive"
+msgstr "Søg i arkiv"
+
+#: ../wp-boot-theme/archive-sidebar.php:7
+msgid "Categories"
+msgstr "Kategorier"
+
+#: ../wp-boot-theme/archive-sidebar.php:26
+msgid "No categories"
+msgstr "Ingen kategorier"
+
+#: ../wp-boot-theme/archive-sidebar.php:38
+msgid "Tags"
+msgstr "Tags"
+
+#: ../wp-boot-theme/archive-sidebar.php:60
+msgid "Authors"
+msgstr "Skribenter"
+
+#: ../wp-boot-theme/comments.php:37
+msgid "Older comments"
+msgstr "Ældre kommentarer"
+
+#: ../wp-boot-theme/comments.php:38
+msgid "Newer comments"
+msgstr "Nyere kommentarer"
+
+#: ../wp-boot-theme/comments.php:46
+msgid "Comments are closed."
+msgstr "Kommentarer er lukket."
+
+#: ../wp-boot-theme/content-none.php:2
+msgid "Nothing Found"
+msgstr "Intet matchede din søgning"
+
+#: ../wp-boot-theme/content-none.php:12
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr ""
+"Intet matchede dine søgekriterier. Prøv venligst igen med andre "
+"søgekriterier."
+
+#: ../wp-boot-theme/content-none.php:16
+msgid ""
+"It seems we can't find what you're looking for. Perhaps searching can help."
+msgstr ""
+"Det ser ud som om, at vi ikke kan finde det du leder efter. Prøv at lave en "
+"søgning."
+
+#: ../wp-boot-theme/content.php:6 ../wp-boot-theme/content.php:14
+#: ../wp-boot-theme/functions.php:235 ../wp-boot-theme/functions.php:268
+#: ../wp-boot-theme/page.php:9
+msgid "Edit"
+msgstr "Rediger"
+
+#: ../wp-boot-theme/content.php:12
+msgid "Sticky"
+msgstr "Sticky"
+
+#: ../wp-boot-theme/content.php:20
+msgid "Posted On"
+msgstr "Skrevet den"
+
+#: ../wp-boot-theme/content.php:21 ../wp-boot-theme/functions.php:260
+msgid "By"
+msgstr "Af"
+
+#: ../wp-boot-theme/content.php:22
+msgid "In"
+msgstr "Under"
+
+#: ../wp-boot-theme/content.php:25
+msgid "Leave a comment"
+msgstr "Skriv en kommentar"
+
+#: ../wp-boot-theme/content.php:25
+msgid "One comment so far"
+msgstr "En kommentar indtil videre"
+
+#: ../wp-boot-theme/content.php:25
+#, php-format
+msgid "View all % comments"
+msgstr "Se alle % kommentarer"
+
+#: ../wp-boot-theme/functions.php:18
+msgid "Primary Menu"
+msgstr "Primær menu"
+
+#: ../wp-boot-theme/functions.php:23
+msgid "Header"
+msgstr "Header"
+
+#: ../wp-boot-theme/functions.php:25
+msgid "Widgets in this area will be shown after header in the home page."
+msgstr "Widgets i dette område vil blive vist under header'en på forsiden."
+
+#: ../wp-boot-theme/functions.php:34
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: ../wp-boot-theme/functions.php:36
+msgid "Widgets in this area will be shown on right side."
+msgstr "Widgets i dette område vil blive vist i højre side."
+
+#: ../wp-boot-theme/functions.php:45
+msgid "Bottom"
+msgstr "Bottom"
+
+#: ../wp-boot-theme/functions.php:47
+msgid "Widgets in this area will be shown before footer."
+msgstr "Widgets i dette område vil blive vist før footer'en."
+
+#: ../wp-boot-theme/functions.php:56
+msgid "Footer"
+msgstr "Footer"
+
+#: ../wp-boot-theme/functions.php:58
+msgid "Widgets in this area will be shown in the footer"
+msgstr "Widgets i dette omårde vil blive vis i footer'en."
+
+#: ../wp-boot-theme/functions.php:94
+msgid "Next page"
+msgstr "Næste side"
+
+#: ../wp-boot-theme/functions.php:95
+msgid "Previous page"
+msgstr "Forrige side"
+
+#: ../wp-boot-theme/functions.php:235
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../wp-boot-theme/functions.php:271
+#, php-format
+msgid "%s Reply"
+msgstr "%s Svar"
+
+#: ../wp-boot-theme/functions.php:276
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar venter på at blive godkendt."
+
+#: ../wp-boot-theme/functions.php:357
+msgid "Name"
+msgstr "Navn"
+
+#: ../wp-boot-theme/functions.php:364
+msgid "Email"
+msgstr "E-mail"
+
+#: ../wp-boot-theme/functions.php:371
+#, php-format
+msgid "Required fields are marked %s"
+msgstr "Obligatoriske felter er markeret med %s"
+
+#: ../wp-boot-theme/functions.php:379
+msgctxt "noun"
+msgid "Comment"
+msgstr "Kommentar"
+
+#: ../wp-boot-theme/functions.php:388
+#, php-format
+msgid "You must be %s to post a comment."
+msgstr "Du skal være %s for at kommentere."
+
+#: ../wp-boot-theme/functions.php:388
+msgid "logged in"
+msgstr "logget ind"
+
+#: ../wp-boot-theme/functions.php:391
+#, php-format
+msgid "Logged in as %1$s. %2$s"
+msgstr "Logget in som %1$s. %2$s"
+
+#: ../wp-boot-theme/functions.php:391
+msgid "Log out"
+msgstr "Log ud"
+
+#: ../wp-boot-theme/functions.php:393
+msgid "Your email address will not be published."
+msgstr "Din e-mail adresse vil ikke blive vist."
+
+#: ../wp-boot-theme/functions.php:395
+#, php-format
+msgid "You may use these %1$s tags and attributes: %2$s"
+msgstr "Du kan bruge disse %1$s tags og attributer: %2$s"
+
+#: ../wp-boot-theme/functions.php:401
+msgid "Leave a Reply"
+msgstr "Skriv et svar"
+
+#: ../wp-boot-theme/functions.php:403
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Skriv et svar til %s"
+
+#: ../wp-boot-theme/functions.php:405
+msgid "Cancel reply"
+msgstr "Annuler svar"
+
+#: ../wp-boot-theme/functions.php:407
+msgid "Post Comment"
+msgstr "Skriv kommentar"
+
+#: ../wp-boot-theme/functions.php:492 ../wp-boot-theme/functions.php:503
+msgid "Read more"
+msgstr "Læs mere"
+
+#: ../wp-boot-theme/functions.php:514 ../wp-boot-theme/functions.php:522
+msgid "Logo"
+msgstr "Logo"
+
+#: ../wp-boot-theme/functions.php:529 ../wp-boot-theme/functions.php:537
+msgid "Favicon"
+msgstr "Favicon"
+
+#: ../wp-boot-theme/search.php:7
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Søgeresultater for: %s"
+
+#: ../wp-boot-theme/searchform.php:3
+msgid "Search"
+msgstr "Søg"
+
+#: ../wp-boot-theme/admin/style-editor.php:9
+#: ../wp-boot-theme/admin/style-editor.php:47
+msgid "style.less Editor"
+msgstr "style.less Editor"
+
+#: ../wp-boot-theme/admin/style-editor.php:23
+msgid "You do not have sufficient permissions to the style.less for this site."
+msgstr ""
+"Du har ikke tilstrækkelige rettigheder til at redigere style.less for denne "
+"side."
+
+#: ../wp-boot-theme/admin/style-editor.php:51
+msgid "Style.less updated"
+msgstr "Style.less opdateret"
+
+#: ../wp-boot-theme/admin/style-editor.php:55
+msgid ""
+"Update the style.less file. When style.less is updated the compilation is "
+"automatically done next time a page is loaded."
+msgstr ""
+"Opdater style.less filen. Når filen bliver opdateret, vil den automatisk "
+"kompilere næste gang en side hentes."
+
+#: ../wp-boot-theme/admin/style-editor.php:64
+msgid "Update style.less"
+msgstr "Opdater style.less"
+
+#~ msgid "GO BACK TO THE HOMEPAGE"
+#~ msgstr "Tilbage til forsiden"
