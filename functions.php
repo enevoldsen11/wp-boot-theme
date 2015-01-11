@@ -165,7 +165,7 @@ if( ! function_exists('boot_pagination') ){
 					'type'=>'array'
 					) );
 
-				$pagination ="<ul class='pagination'>\n\t<li>";
+				$pagination ="<ul class='pagination pull-right'>\n\t<li>";
 				$pagination .=join("</li>\n\t<li>", $items);
 				$pagination ."</li>\n</ul>\n";
 				
