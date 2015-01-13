@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="row">
-    <div id="content" class="site-content col-md-8" role="main">
+    <div id="content" class="site-content col-sm-8" role="main">
         <?php if ( have_posts() ) { ?>
         <header class="page-header archive-header">
             <h1 class="page-title"><?php printf( __( 'Search Results for: %s', boottheme ), get_search_query() ); ?></h1>

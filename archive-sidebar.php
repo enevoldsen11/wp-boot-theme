@@ -1,4 +1,4 @@
-<div id="sidebar" class="col-md-4 archive-sidebar" role="complementary">
+<div id="sidebar" class="col-sm-4 archive-sidebar" role="complementary">
         <div class="sidebar-inner">
             
 			<h3><?php _e( 'Search in archive', boottheme );?></h3>			

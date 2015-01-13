@@ -1,84 +1,8 @@
-//== Tooltips
-//
-//##
-
-//** Tooltip max width
-@tooltip-max-width:           200px;
-//** Tooltip text color
-@tooltip-color:               #fff;
-//** Tooltip background color
-@tooltip-bg:                  rgba(0,0,0,.9);
-@tooltip-opacity:             .9;
-
-//** Tooltip arrow width
-@tooltip-arrow-width:         5px;
-//** Tooltip arrow color
-@tooltip-arrow-color:         @tooltip-bg;
-
-
-//== Popovers
-//
-//##
-
-//** Popover body background color
-@popover-bg:                          #fff;
-//** Popover maximum width
-@popover-max-width:                   276px;
-//** Popover border color
-@popover-border-color:                rgba(0,0,0,.2);
-//** Popover fallback border color
-@popover-fallback-border-color:       #ccc;
-
-//** Popover title background color
-@popover-title-bg:                    darken(@popover-bg, 3%);
-
-//** Popover arrow width
-@popover-arrow-width:                 10px;
-//** Popover arrow color
-@popover-arrow-color:                 #fff;
-
-//** Popover outer arrow width
-@popover-arrow-outer-width:           (@popover-arrow-width + 1);
-//** Popover outer arrow color
-@popover-arrow-outer-color:           fadein(@popover-border-color, 5%);
-//** Popover outer arrow fallback color
-@popover-arrow-outer-fallback-color:  darken(@popover-fallback-border-color, 20%);
 
 .popover {
   color: @text-color;
 }
 
-//== Modals
-//
-//##
-
-//** Padding applied to the modal body
-@modal-inner-padding:         20px;
-
-//** Padding applied to the modal title
-@modal-title-padding:         15px;
-//** Modal title line-height
-@modal-title-line-height:     @line-height-base;
-
-//** Background color of modal content area
-@modal-content-bg:                             #fff;
-//** Modal content border color
-@modal-content-border-color:                   rgba(0,0,0,.2);
-//** Modal content border color **for IE8**
-@modal-content-fallback-border-color:          #999;
-
-//** Modal backdrop background color
-@modal-backdrop-bg:           #000;
-//** Modal backdrop opacity
-@modal-backdrop-opacity:      .5;
-//** Modal header border color
-@modal-header-border-color:   #e5e5e5;
-//** Modal footer border color
-@modal-footer-border-color:   @modal-header-border-color;
-
-@modal-lg:                    900px;
-@modal-md:                    600px;
-@modal-sm:                    300px;
 
 .modal {
   .close {
@@ -86,54 +10,9 @@
   }
 }
 
-//== Wells
-//
-//##
-
-@well-bg:                     @gray-lighter;
-@well-border:                 transparent;
-
 .well {
   .box-shadow(none);
 }
-
-//== Panels
-//
-//##
-
-@panel-bg:                    #fff;
-@panel-body-padding:          15px;
-@panel-heading-padding:       10px 15px;
-@panel-footer-padding:        @panel-heading-padding;
-@panel-border-radius:         @border-radius-base;
-
-//** Border color for elements within panels
-@panel-inner-border:          @gray-lighter;
-@panel-footer-bg:             @gray-lighter;
-
-@panel-default-text:          @text-color;
-@panel-default-border:        @gray-lighter;
-@panel-default-heading-bg:    @gray-lighter;
-
-@panel-primary-text:          #fff;
-@panel-primary-border:        @brand-primary;
-@panel-primary-heading-bg:    @brand-primary;
-
-@panel-success-text:          @state-success-text;
-@panel-success-border:        @state-success-border;
-@panel-success-heading-bg:    @state-success-bg;
-
-@panel-info-text:             @state-info-text;
-@panel-info-border:           @state-info-border;
-@panel-info-heading-bg:       @state-info-bg;
-
-@panel-warning-text:          @state-warning-text;
-@panel-warning-border:        @state-warning-border;
-@panel-warning-heading-bg:    @state-warning-bg;
-
-@panel-danger-text:           @state-danger-text;
-@panel-danger-border:         @state-danger-border;
-@panel-danger-heading-bg:     @state-danger-bg;
 
 .panel {
   &-default {

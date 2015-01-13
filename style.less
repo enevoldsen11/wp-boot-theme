@@ -1,12 +1,24 @@
 @import "/less/bootstrap/less/bootstrap.less";
 @import "/less/font-awesome/less/font-awesome.less";
 
-/*
-Basic variables
-*/
+@import "/less/variables.less";
+
+@import "/less/typography.less";
+@import "/less/navbar.less";
+@import "/less/components.less";
+@import "/less/tables.less";
+@import "/less/buttons.less";
+@import "/less/forms.less";
+@import "/less/navs.less";
+@import "/less/containers.less";
+
+@import "/less/post.less";
+@import "/less/archive.less";
+@import "/less/comments.less";
+@import "/less/gallery.less";
 
 /*
-Gray and brand colors for use across Bootstrap.
+	Custom variables
 */
 @gray-darker: lighten(#000, 13.5%); // #222
 @gray-dark: #7b8a8b;   // #333
@@ -21,6 +33,7 @@ Gray and brand colors for use across Bootstrap.
 @brand-danger: #E74C3C;
 
 @import url("//fonts.googleapis.com/css?family=Lato:400,700,400italic");
+@headings-color: @brand-primary;
 
 @header-color: #222222;
 @header-text-color: #ffffff; 
@@ -41,21 +54,26 @@ Gray and brand colors for use across Bootstrap.
 //** Global text color on `<body>`.
 @text-color: #444444;
 
-@import "/less/typography.less";
-@import "/less/navbar.less";
-@import "/less/components.less";
-@import "/less/tables.less";
-@import "/less/buttons.less";
-@import "/less/forms.less";
-@import "/less/dropdowns.less";
-@import "/less/navs.less";
-@import "/less/scaffolding.less";
-@import "/less/containers.less";
+@navbar-height: 90px;
+@navbar-collapse-max-height: 100%;
 
-@import "/less/post.less";
-@import "/less/archive.less";
-@import "/less/comments.less";
-@import "/less/gallery.less";
+@navbar-default-color: @header-text-color;
+@navbar-default-bg: @header-color;
+@navbar-default-border: transparent;
+
+@navbar-default-link-color: @header-text-color;
+@navbar-default-link-hover-color: @brand-primary;
+@navbar-default-toggle-hover-bg: darken(@navbar-default-bg, 5%);
+@navbar-default-toggle-icon-bar-bg: @header-text-color;
+@navbar-default-toggle-border-color: darken(@navbar-default-bg, 5%);
+@navbar-default-link-active-color: @header-text-color;
+@navbar-default-link-active-bg: darken(@navbar-default-bg, 5%);
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint: @screen-md-min;
+//** Point at which the navbar begins collapsing.
+@grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
 
 #header{
 	background-color: @header-color;

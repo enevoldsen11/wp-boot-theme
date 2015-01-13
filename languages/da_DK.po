@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Boottheme\n"
-"POT-Creation-Date: 2015-01-11 23:34+0100\n"
-"PO-Revision-Date: 2015-01-11 23:35+0100\n"
+"POT-Creation-Date: 2015-01-11 23:54+0100\n"
+"PO-Revision-Date: 2015-01-12 22:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: Danish\n"
@@ -62,7 +62,7 @@ msgstr "Kommentarer er lukket."
 
 #: ../wp-boot-theme/content-none.php:2
 msgid "Nothing Found"
-msgstr "Intet matchede din søgning"
+msgstr "Der er ingenting her"
 
 #: ../wp-boot-theme/content-none.php:12
 msgid ""
