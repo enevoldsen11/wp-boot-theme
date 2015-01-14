@@ -1,11 +1,11 @@
-<header class="page-header archive-header">
+<header class="page-header">
     <h1 class="page-title"><?php _e( 'Nothing Found', boottheme ); ?></h1>
 </header>
 
 <div class="page-content">
     <?php if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
 
-    <p><?php e_( 'Ready to publish your first post?', boottheme ); ?>  <?php echo '<a href="' . admin_url( 'post-new.php' ) . '">'.e_( 'Ready to publish your first post?', boottheme ).'</a>' ?> </p>
+    <p><?php _e( 'Ready to publish your first post?', boottheme ); ?>  <?php echo '<a href="' . admin_url( 'post-new.php' ) . '">'.__( 'Ready to publish your first post?', boottheme ).'</a>' ?> </p>
 
     <?php } elseif ( is_search() ) { ?>
 

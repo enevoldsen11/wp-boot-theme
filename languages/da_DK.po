@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Boottheme\n"
-"POT-Creation-Date: 2015-01-11 23:54+0100\n"
-"PO-Revision-Date: 2015-01-12 22:02+0100\n"
+"POT-Creation-Date: 2015-01-14 18:27+0100\n"
+"PO-Revision-Date: 2015-01-14 18:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: Danish\n"
@@ -62,7 +62,11 @@ msgstr "Kommentarer er lukket."
 
 #: ../wp-boot-theme/content-none.php:2
 msgid "Nothing Found"
-msgstr "Der er ingenting her"
+msgstr "Intet fundet"
+
+#: ../wp-boot-theme/content-none.php:8
+msgid "Ready to publish your first post?"
+msgstr "Klar til at skrive dit første indlæg?"
 
 #: ../wp-boot-theme/content-none.php:12
 msgid ""
@@ -81,7 +85,7 @@ msgstr ""
 
 #: ../wp-boot-theme/content.php:6 ../wp-boot-theme/content.php:14
 #: ../wp-boot-theme/functions.php:235 ../wp-boot-theme/functions.php:268
-#: ../wp-boot-theme/page.php:9
+#: ../wp-boot-theme/page.php:10
 msgid "Edit"
 msgstr "Rediger"
 
