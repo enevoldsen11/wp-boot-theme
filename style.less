@@ -40,9 +40,11 @@
 
 @bottom-color: lighten(@header-color, 5%); 
 @bottom-text-color: @header-text-color;
+@bottom-font-size: 14px;
 
 @footer-color: darken(@header-color, 5%);
 @footer-text-color: @header-text-color;
+@footer-font-size: 14px;
 
 //** Global textual link color.
 @link-color: @brand-primary;
@@ -83,12 +85,14 @@
 #bottom{
 	background-color: @bottom-color;
 	color: @bottom-text-color;
+	font-size: @bottom-font-size;
 }
 
 #footer{
 	background-color: @footer-color;
 	color: @footer-text-color;
 	padding: 30px 0px;
+	font-size: @footer-font-size;
 	
 	.scroll-top{
 		padding-right: 15px;		
@@ -116,3 +120,6 @@ section {
 	overflow: hidden;
 }
 
+.tab{
+margin-right: 25px;
+}

@@ -47,7 +47,7 @@ register_sidebar(array(
   'description' => __( 'Widgets in this area will be shown before footer.' , boottheme),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
-  'before_widget' => '<div class="col-sm-3 col-xs-6">',
+  'before_widget' => '<div class="col-sm-6 col-md-4">',
   'after_widget' => '</div>'
   )
 );
@@ -58,7 +58,7 @@ register_sidebar(array(
   'description' => __( 'Widgets in this area will be shown in the footer' , boottheme),
   'before_title' => '<h4>',
   'after_title' => '</h4>',
-  'before_widget' => '<div class="col-sm-3 col-xs-6">',
+  'before_widget' => '<div class="col-sm-6 col-md-4">',
   'after_widget' => '</div>'
   )
 );
